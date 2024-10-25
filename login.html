@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/reset.min.css">
+  <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="./css/login.css">
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
+  <title>Login - Shop Now</title>
+</head>
+<body>
+  <div class="loginContainer">
+    <div class="login">
+      <img class="login__banner" src="./assets/images/banner.png" alt="">
+
+      <form class="form" onsubmit="ControllerAuth.login(event)">
+        <div>
+          <h1 class="form__header">Bem-vindo(a) de volta!</h1>
+          <p class="form__subtitle">Faça login para acessar nosso incrível catálogo de slimes</p>
+        </div>
+
+        <div>
+          <div class="form__inputContainer">
+            <label class="form__label" for="email">Email</label>
+            <input class="form__input" type="text" name="email" id="email">
+          </div>
+          <div class="form__inputContainer">
+            <label class="form__label" for="senha">Senha</label>
+            <input class="form__input" type="password" name="senha" id="senha">
+          </div>
+          
+          <button class="form__submit" type="submit">Entrar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="./js/auth/index.mjs" type="module"></script>
+</body>
+</html>

@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="./css/reset.min.css">
   <link rel="stylesheet" href="./css/index.css">
   <link rel="stylesheet" href="./css/catalogo.css">
-  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="./favicon.ico">
 
   <title>Shop Now</title>
 </head>
@@ -19,7 +19,7 @@
   <script type="module" src="./js/auth/index.mjs" defer></script>
   <script type="module" defer>
     import { ControllerAuth } from './js/auth/index.mjs';
-    ControllerAuth.restrictRoute();
+    ControllerAuth.restrictRoute('/login.html');
   </script>
 </body>
 </html>

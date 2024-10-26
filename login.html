@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="./css/reset.min.css">
   <link rel="stylesheet" href="./css/index.css">
   <link rel="stylesheet" href="./css/login.css">
-  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="./favicon.ico">
 
   <title>Login - Shop Now</title>
 </head>
@@ -19,7 +19,7 @@
     <div class="login">
       <img class="login__banner" src="./assets/images/banner.png" alt="">
 
-      <form class="form" onsubmit="ControllerAuth.login(event)">
+      <form class="form" id="form">
         <div>
           <h1 class="form__header">Bem-vindo(a) de volta!</h1>
           <p class="form__subtitle">Faça login para acessar nosso incrível catálogo de slimes</p>
@@ -53,6 +53,10 @@
     </div>
   </div>
 
-  <script src="./js/auth/index.mjs" type="module"></script>
+  <script type="module" src="./js/auth/index.mjs" defer></script>
+  <script type="module" defer>
+    import { ControllerAuth } from './js/auth/index.mjs';
+    ControllerAuth.restrictRoute('/', true);
+  </script>
 </body>
 </html>

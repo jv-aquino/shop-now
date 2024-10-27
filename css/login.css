@@ -17,6 +17,7 @@ body {
 
 .login {
   width: max-content;
+  max-height: 85vh;
   background-color: var(--purple-900);
   border-radius: 24px;
 
@@ -27,6 +28,7 @@ body {
 }
 .login__banner {
   width: 50%;
+  max-height: calc(85vh - 48px);
   border-radius: 24px;
 }
 
@@ -85,4 +87,40 @@ body {
 }
 .form__submit:hover {
   background-color: var(--purple-600);
+}
+
+@media screen and (max-width:1024px) {
+  .login {
+    padding: 24px 16px;
+  }
+  .login__banner {
+    display: none;
+  }
+  .form {
+    max-width: 100%;
+    margin: auto;
+  }
+  .form__credentials {
+    padding: 0 5%;
+  }
+}
+
+@media screen and (max-width:1280px) { 
+  .loginContainer { 
+    padding: 0;
+    width: 88%;
+    margin: auto;
+  }
+  .login {
+    flex: 1 1 0;
+    width: 88%;
+    margin: auto;
+  }
+  .form__header {
+    width: auto;
+    font-size: 40px;
+  }
+  .login {
+    gap: 40px;
+  }
 }

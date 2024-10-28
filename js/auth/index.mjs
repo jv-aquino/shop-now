@@ -31,13 +31,26 @@ export const ControllerAuth = (() => {
     }
 
     if (ModelAuth.login(user)) {
+      setTimeout(() => {
+        window.location.assign('/index.html')
+      }, 4100)
+
       return ViewAuth.showApproved(user)
     }
-    return ViewAuth.showReproved(erro, user)
+    return ViewAuth.showReproved('Problema do servidor', user)
+  }
+
+  function logout() {
+    ModelAuth.logout()
+
+    setTimeout(() => {
+      window.location.assign('/login.html')
+    }, 4000)
   }
 
   return {
     restrictRoute,
-    login
+    login,
+    logout
   }
 })()

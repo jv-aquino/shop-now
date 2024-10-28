@@ -40,17 +40,8 @@ export const ControllerAuth = (() => {
     return ViewAuth.showReproved('Problema do servidor', user)
   }
 
-  function logout() {
-    ModelAuth.logout()
-
-    setTimeout(() => {
-      window.location.assign('/login.html')
-    }, 4000)
-  }
-
   return {
     restrictRoute,
     login,
-    logout
   }
 })()

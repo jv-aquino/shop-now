@@ -3,7 +3,10 @@ import { ControllerCatalogo } from "./index.mjs";
 export const ViewCatalogo = (() => {
   const slimesDOM = document.getElementById('slimes');
   const carrinhoDOM = document.getElementById('carrinho');
-  const userEmailDOM = document.getElementById('userEmail')
+  const userEmailDOM = document.getElementById('userEmail');
+  
+  const popupDOM = document.getElementById('popupContainer');
+  const popupReticenciasDOM = document.getElementById('popupReticencias');
 
   function addSlime(slime) {
     const slimeComponent = document.createElement('div');
@@ -42,9 +45,30 @@ export const ViewCatalogo = (() => {
     userEmailDOM.textContent = email
   }
 
+  function showLogout() {
+    popupDOM.classList.add('view')
+
+    const pri = setTimeout(() => {
+      popupReticenciasDOM.textContent = '.'
+    }, 500)
+    const seg = setTimeout(() => {
+      clearTimeout(pri)
+      popupReticenciasDOM.textContent = '..'
+    }, 1500)
+    const ter = setTimeout(() => {
+      clearTimeout(seg)
+      popupReticenciasDOM.textContent = '...'
+    }, 2500)
+    setTimeout(() => {
+      clearTimeout(ter)
+      popupReticenciasDOM.textContent = '....'
+    }, 3500)
+  }
+
   return {
     addSlime,
     updateCarrinho,
-    updateEmail
+    updateEmail,
+    showLogout
   }
 })()

@@ -19,9 +19,6 @@ body {
 .popupContainer.view {
   display: flex;
 }
-.popupContainer.view .popup {
-  transform: translate(0);
-}
 .popup {
   font-size: 18px;
   color: var(--purple-900);
@@ -36,9 +33,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 16px;
-
-  transform: translate(0, -300%);
-  transition: transform .4s;
 }
 .popup__header {
   font-size: 32px;

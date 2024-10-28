@@ -1,4 +1,5 @@
 import { ModelCatalogo } from "./Model.mjs";
+import { ModelAuth } from "../auth/Model.mjs";
 import { ViewCatalogo } from "./View.mjs";
 import { slimes } from "../../assets/data/slimes.mjs";
 
@@ -23,9 +24,19 @@ export const ControllerCatalogo = (() => {
     return ViewCatalogo.updateCarrinho(ModelCatalogo.removerCarrinho(slimeId), isAdd, String(slimeId));
   }
 
+  function logout() {
+    ModelAuth.logout()
+
+    setTimeout(() => {
+      window.location.assign('/login.html')
+    }, 4000);
+    ViewCatalogo.showLogout()
+  }
+
   return {
     loadProdutos,
     loadEmail,
-    alterarSlimeCarrinho
+    alterarSlimeCarrinho,
+    logout
   }
 })()

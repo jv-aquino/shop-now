@@ -20,13 +20,13 @@
     
     <ul class="nav__itens">
       <li class="nav__ola">Olá, <span id="userEmail"></span></li>
-      <li class="nav__icon cart"><!-- Carrinho --></li>
-      <li class="nav__icon"><!-- Botão de logout --></li>
+      <li class="nav__icon carrinho"><span id="carrinho">0</span></li>
+      <li class="nav__icon"><button class="logout"></button></li>
     </ul>
   </nav>
 
   <main class="main">
-    <h1 class="main__header">Catálogo do Slimes</h1>
+    <h1 class="main__header">Catálogo de Slimes</h1>
 
     <div class="main__slimes" id="slimes">
 
@@ -34,6 +34,7 @@
   </main>
   
   <script type="module" src="./js/auth/index.mjs" defer></script>
+  <script type="module" src="./js/catalogo/index.mjs" defer></script>
   <script type="module" defer>
     import { ControllerAuth } from './js/auth/index.mjs';
     ControllerAuth.restrictRoute('/login.html');

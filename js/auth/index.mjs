@@ -41,10 +41,3 @@ export const ControllerAuth = (() => {
     login
   }
 })()
-
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("form");
-  if (form) {
-    form.addEventListener("submit", ControllerAuth.login);
-  }
-});

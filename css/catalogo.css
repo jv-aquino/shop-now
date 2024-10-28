@@ -1,0 +1,57 @@
+body {
+  background-color: var(--purple-900);
+  color: #FFF;
+}
+
+.nav {
+  padding: 32px 100px;
+  border-bottom: 1px solid var(--purple-200);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav__itens {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  align-items: center;
+} 
+.nav__ola {
+  cursor: default;
+  font-size: 20px;
+}
+.nav__ola #userEmail {
+  font-weight: 600;
+}
+.nav__icon {
+  width: 32px;
+  height: 32px;
+}
+
+.main {
+  padding: 0 100px;
+  display: flex;
+
+}
+.main__header {
+  font-size: 64px;
+  font-weight: 700;
+  margin: 64px auto;
+  text-align: center;
+}
+.main__slimes {
+  display: grid;
+  gap: 48px;
+}
+
+.slimeCard {
+  padding: 24px;
+  border: 2px solid #4E3D63;
+  border-radius: 24px;
+}
+.slimeCard__button {
+  font-weight: 600;
+  color: var(--purple-200);
+  background-color: var(--purple-900);
+}

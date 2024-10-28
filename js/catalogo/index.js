@@ -1,37 +1,12 @@
-import { ModelAuth } from "./Model.js";
-import { ViewAuth } from "./View";
+import { ModelCatalogo } from "./Model.mjs";
+import { ViewCatalogo } from "./View.mjs";
 
-function redirect(url) {
-  window.location.assign(url);
-}
-
-const ControllerAuth = (() => {
-
-  function restrictRoute() {
-    if (!ModelAuth.isLogged()) {
-      redirect('/')
-    }
-  }
-
-  return {
-    restrictRoute
-  }
-})()
-
-const Produto = () => {
-  
-}
-
-const ControllerCatalogo = (() => {
-  const carrinhoItens = {
-
-  }
-
-  function updateCarrinho(qtd) {
+export const ControllerCatalogo = (() => {
+  function loadProdutos() {
 
   }
 
   return {
-    updateCarrinho
+    loadProdutos
   }
 })()

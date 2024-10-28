@@ -8,7 +8,7 @@ export const ViewCatalogo = (() => {
   function addSlime(slime) {
     const slimeComponent = document.createElement('div');
     slimeComponent.innerHTML = `<img src='./assets/images/slimes/${slime.src}' alt='${slime.descricao}' />`;
-    slimeComponent.innerHTML += `<h2>Slime ${slime.nome}</h2>`;
+    slimeComponent.innerHTML += `<h2>Slime ${slime.nome} <span class='preco'>- $${slime.preco}</span></h2>`;
     slimeComponent.innerHTML += `<p>${slime.descricao}</p>`;
 
     const botao = document.createElement('button')

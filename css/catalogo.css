@@ -96,6 +96,9 @@ body {
   font-size: 24px;
   align-self: flex-start;
 }
+.slimeCard .preco {
+  font-weight: 300;
+}
 .slimeCard p {
   font-weight: 400;
   font-size: 16px;

@@ -1,11 +1,13 @@
 body {
   background-color: var(--purple-900);
   color: #FFF;
+  position: relative;
 }
 
 .popupContainer {
   width: 100%;
   height: 100vh;
+  z-index: 99;
 
   display: none;
   align-items: center;
@@ -65,18 +67,14 @@ body {
   position: relative;
 }
 .nav__icon.carrinho,
-.nav__icon .logout {
+.nav__icon .logout,
+.nav__button {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 .nav__icon.carrinho {
   background-image: url('../assets/icons/cart.svg');
-}
-.nav__icon .logout {
-  width: 100%;
-  height: 100%;
-  background-image: url('../assets/icons/logout.svg');
 }
 .nav__icon #carrinho {
   position: absolute;
@@ -92,6 +90,30 @@ body {
   color: var(--purple-200);
   background-color: #CA2B53;
   border-radius: 9999px;
+}
+.nav__icon .logout {
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/icons/logout.svg');
+}
+
+.nav__icon .close,
+.nav__button {
+  width: 34px;
+  height: 34px;
+  display: none;
+}
+.nav__button {
+  background-image: url('../assets/icons/menu.svg');
+  position: relative;
+}
+.nav__icon .close {
+  background-image: url('../assets/icons/close.svg');
+}
+.nav__icon.close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
 }
 
 .main {
@@ -174,6 +196,29 @@ background-color: hsl(279, 58%, 54%);
   }
 }
 @media screen and (max-width:1024px) {
+  .nav__button, .nav__icon .close {
+    display: block;
+  }
+  .nav__itens {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+    background-color: transparent;
+    z-index: 9;
+
+    display: none;
+    flex-direction: column;
+
+    transition: background-color .6s;
+  }
+  .nav__itens.view {
+    display: flex;
+    background-color: #CA2B53;
+  }
+
   .slimeCard p {
     line-height: normal;
     font-size: 14px;

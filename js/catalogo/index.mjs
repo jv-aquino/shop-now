@@ -32,11 +32,16 @@ export const ControllerCatalogo = (() => {
     }, 4000);
     ViewCatalogo.showLogout()
   }
+  
+  function toggleNav() {
+    ViewCatalogo.toggleNav();
+  }
 
   return {
     loadProdutos,
     loadEmail,
     alterarSlimeCarrinho,
-    logout
+    logout,
+    toggleNav
   }
 })()

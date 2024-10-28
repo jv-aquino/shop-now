@@ -1,9 +1,11 @@
 import { ControllerCatalogo } from "./index.mjs";
 
 export const ViewCatalogo = (() => {
-  const slimesDOM = document.getElementById('slimes');
+  const navItensDOM = document.getElementById('navItens');
+
   const carrinhoDOM = document.getElementById('carrinho');
   const userEmailDOM = document.getElementById('userEmail');
+  const slimesDOM = document.getElementById('slimes');
   
   const popupDOM = document.getElementById('popupContainer');
   const popupReticenciasDOM = document.getElementById('popupReticencias');
@@ -65,10 +67,19 @@ export const ViewCatalogo = (() => {
     }, 3500)
   }
 
+  function toggleNav() {
+    if (navItensDOM.classList.contains('view')) {
+      navItensDOM.classList.remove('view');
+    } else {
+      navItensDOM.classList.add('view')
+    }
+  }
+
   return {
     addSlime,
     updateCarrinho,
     updateEmail,
-    showLogout
+    showLogout,
+    toggleNav
   }
 })()

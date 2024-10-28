@@ -22,14 +22,17 @@
     </div>
   </div>
 
-  <nav class="nav">
+  <nav class="nav" id="nav">
     <img src="./assets/images/shopnow.png" alt="">
     
-    <ul class="nav__itens">
+    <ul class="nav__itens" id="navItens">
       <li class="nav__ola">Olá, <span id="userEmail"></span></li>
       <li class="nav__icon carrinho"><span id="carrinho">0</span></li>
       <li class="nav__icon"><button class="logout" id="logoutButton"></button></li>
+      <li class="nav__icon close"><button class="close" id="closeButton"></button></li>
     </ul>
+
+    <button class="nav__button" id="navButton"></button>
   </nav>
 
   <main class="main">
@@ -54,8 +57,16 @@
 
     document.addEventListener("DOMContentLoaded", () => {
       const logoutButton = document.getElementById("logoutButton");
+      const navButton = document.getElementById("navButton");
+      const closeNavButton = document.getElementById("closeButton");
       if (logoutButton) {
         logoutButton.addEventListener("click", ControllerCatalogo.logout);
+      } 
+      if (navButton) {
+        navButton.addEventListener("click", ControllerCatalogo.toggleNav);
+      }
+      if (closeNavButton) {
+        closeNavButton.addEventListener("click", ControllerCatalogo.toggleNav);
       }
     });
   </script>

@@ -1,8 +1,7 @@
 export const ModelAuth = (() => {
   function login(user) {
     try {
-      localStorage.setItem(user.email, { senha: user.senha, carrinho: [] })
-      localStorage.setItem('isLogged', true)
+      localStorage.setItem('user', JSON.stringify({ email: user.email, senha: user.senha, carrinho: [] }))
       return true;
     } catch (e) {
       return e;
@@ -10,23 +9,17 @@ export const ModelAuth = (() => {
   }
 
   function isLogged() {
-    const isLoggedJson = localStorage.getItem('isLogged')
+    const isLoggedJson = localStorage.getItem('user')
 
     if (!isLoggedJson) {
       return false;
     }
-
-    const isLogged = JSON.parse(isLoggedJson)
-
-    if (isLogged === true) {
-      return true;
-    } 
-    return false;
+    return true;
   }
 
-  function logout(user) {
+  function logout() {
     try {
-      localStorage.removeItem(user.email)
+      localStorage.removeItem('user')
       return true;
     } catch (e) {
       return e;

@@ -34,10 +34,15 @@
   </main>
   
   <script type="module" src="./js/auth/index.mjs" defer></script>
-  <script type="module" src="./js/catalogo/index.mjs" defer></script>
   <script type="module" defer>
     import { ControllerAuth } from './js/auth/index.mjs';
     ControllerAuth.restrictRoute('/login.html');
+  </script>
+  <script type="module" src="./js/catalogo/index.mjs"></script>
+  <script type="module">
+    import { ControllerCatalogo } from './js/catalogo/index.mjs'
+    ControllerCatalogo.loadProdutos();
+    ControllerCatalogo.loadEmail()
   </script>
 </body>
 </html>

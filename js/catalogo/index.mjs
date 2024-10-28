@@ -4,9 +4,13 @@ import { slimes } from "../../assets/data/slimes.mjs";
 
 export const ControllerCatalogo = (() => {
   function loadProdutos() {
-    for (let slime in slimes) {
+    for (let slime of slimes) {
       ViewCatalogo.addSlime(slime)
     }
+  }
+
+  function loadEmail() {
+    return ViewCatalogo.updateEmail(ModelCatalogo.getFilteredEmail())
   }
 
   function alterarSlimeCarrinho(e) {
@@ -21,6 +25,7 @@ export const ControllerCatalogo = (() => {
 
   return {
     loadProdutos,
+    loadEmail,
     alterarSlimeCarrinho
   }
 })()

@@ -1,21 +1,23 @@
-import { ControllerCatalogo } from ".";
+import { ControllerCatalogo } from "./index.mjs";
 
 export const ViewCatalogo = (() => {
-  const slimesDOM = document.getElementById('#slimes');
-  const carrinhoDOM = document.getElementById('#carrinho');
+  const slimesDOM = document.getElementById('slimes');
+  const carrinhoDOM = document.getElementById('carrinho');
+  const userEmailDOM = document.getElementById('userEmail')
 
   function addSlime(slime) {
     const slimeComponent = document.createElement('div');
-    slimeComponent.innerHTML = `<img src='${slime.src}' alt='${slime.descricao}' />`;
+    slimeComponent.innerHTML = `<img src='./assets/images/slimes/${slime.src}' alt='${slime.descricao}' />`;
     slimeComponent.innerHTML += `<h2>Slime ${slime.nome}</h2>`;
-    slimeComponent.innerHTML += `<p>Slime ${slime.nome}</h1>`;
+    slimeComponent.innerHTML += `<p>${slime.descricao}</p>`;
 
     const botao = document.createElement('button')
-    botao.id = slime.id
-    botao.textContent = 'Adicionar ao carrinho';
+    botao.id = slime.id;
+    botao.textContent = 'Adicionar ao Carrinho';
+    botao.setAttribute('data-isAdd', 'true');
     botao.addEventListener('click', ControllerCatalogo.alterarSlimeCarrinho)
     slimeComponent.appendChild(botao)
-    
+
     slimeComponent.classList.add('slimeCard');
 
     slimesDOM.appendChild(slimeComponent);
@@ -26,16 +28,23 @@ export const ViewCatalogo = (() => {
     buttonDOM.setAttribute('data-isAdd', isAdd ? 'false' : 'true');
 
     if (isAdd) {
+      buttonDOM.textContent = 'Remover do Carrinho';
       buttonDOM.classList.add('remover')
     } else {
+      buttonDOM.textContent = 'Adicionar ao Carrinho'
       buttonDOM.classList.remove('remover')
     }
 
     carrinhoDOM.textContent = number;
   }
 
+  function updateEmail(email) {
+    userEmailDOM.textContent = email
+  }
+
   return {
     addSlime,
-    updateCarrinho
+    updateCarrinho,
+    updateEmail
   }
 })()

@@ -9,7 +9,7 @@ export const ModelCatalogo = (() => {
     if (carrinho.includes(slimeId)) {
       return false;
     }
-    carrinho.append(slimeId);
+    carrinho.push(slimeId);
     localStorage.setItem('carrinho', carrinho);
 
     return carrinho.length;
@@ -18,14 +18,20 @@ export const ModelCatalogo = (() => {
     if (!carrinho.includes(slimeId)) {
       return false;
     }
-    carrinho.splice(carrinho.indexOf(slimeId));
+    carrinho.splice(carrinho.indexOf(slimeId), 1);
     localStorage.setItem('carrinho', carrinho);
 
     return carrinho.length;
   }
 
+  function getFilteredEmail() {
+    const user = JSON.parse(localStorage.getItem('user'));
+    return user.email.split('@')[0]
+  }
+
   return {
     addCarrinho,
-    removerCarrinho
+    removerCarrinho,
+    getFilteredEmail
   }
 })()

@@ -18,7 +18,7 @@ export const slimes = [
     nome: 'Tigrado',
     preco: '24,99',
     descricao: 'Fofo mas pode te arranhar',
-    src: ''
+    src: 'tigrado.webp'
   },
   {
     id: 4,
@@ -38,8 +38,8 @@ export const slimes = [
     id: 6,
     nome: 'Radioativo',
     preco: '99,99',
-    descricao: 'Devem ser armazenados em ambiente seguro ☢️',
-    src: '',
+    descricao: 'Devem ser armazenados em ambiente seguro e podem apresentar riscos (muita fofura) ☢️',
+    src: 'radioativo.webp',
   },
   {
     id: 7,

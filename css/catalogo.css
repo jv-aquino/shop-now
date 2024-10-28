@@ -47,7 +47,11 @@ body {
   position: absolute;
   top: 0;
   right: 0;
-  padding: 1px 3px;
+  cursor: default;
+  
+  width: 13px;
+  text-align: center;
+  padding: 1px 0;
 
   font-size: 12px;
   color: var(--purple-200);
@@ -56,19 +60,20 @@ body {
 }
 
 .main {
-  padding: 0 100px;
+  padding: 0 100px 40px;
   display: flex;
-
+  flex-direction: column;
 }
 .main__header {
   font-size: 64px;
   font-weight: 700;
-  margin: 64px auto;
+  margin: 40px auto;
   text-align: center;
 }
 .main__slimes {
   display: grid;
-  gap: 48px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
 }
 
 .slimeCard {
@@ -79,6 +84,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  align-items: center;
+  justify-content: space-between;
 }
 .slimeCard img {
   width: 160px;
@@ -87,19 +94,56 @@ body {
 .slimeCard h2 {
   font-weight: 600;
   font-size: 24px;
+  align-self: flex-start;
 }
 .slimeCard p {
   font-weight: 400;
   font-size: 16px;
+  color: var(--purple-300);
+  align-self: flex-start;
 }
 .slimeCard button {
   width: 100%;
+  margin-top: 8px;
+  padding: 16px 0;
+  border-radius: 8px;
 
   font-weight: 600;
   color: var(--purple-200);
-  background-color: var(--purple-900);
+  background-color: var(--purple-500);
+
   transition: background-color .4s;
 }
 .slimeCard button.remover {
   background-color: #CA2B53;
+}
+.slimeCard button:hover {
+background-color: hsl(279, 58%, 54%);
+}
+.slimeCard button.remover:hover {
+  background-color: #d70e40;
+}
+
+@media screen and (max-width:768px) {
+  .nav {
+    padding: 32px 24px;
+  }
+  .main {
+    padding: 0 24px 40px;
+  }
+  .main__slimes {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+}
+@media screen and (max-width:1024px) {
+  .slimeCard p {
+    line-height: normal;
+    font-size: 14px;
+  }
+  .main__slimes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .main__header {
+    font-size: 56px;
+  }
 }
